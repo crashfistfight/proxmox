@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 syncthing_vars_() {
-  syncthing_gui_address='.0.0.0:8384'
+  syncthing_gui_address='0.0.0.0:8384'
   syncthing_user='syncthing'
 }
 
