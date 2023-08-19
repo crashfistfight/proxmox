@@ -28,8 +28,8 @@ EOF
 fs.inotify.max_user_watches=524288
 EOF
 
-  firewall-cmd --add-service={syncthing,syncthing-gui} --permanent
-  firewall-cmd --reload
+  firewall-cmd --add-service={syncthing,syncthing-gui} --permanent --quiet
+  firewall-cmd --reload --quiet
 
 }
 
