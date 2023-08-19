@@ -1,14 +1,15 @@
 #! /usr/bin/env bash
 
 syncthing_vars_() {
-  syncthing_gui_address="0.0.0.0:8384"
+  syncthing_gui_address='.0.0.0:8384'
+  syncthing_user='syncthing'
 }
 
 syncthing_() {
   dnf update
   dnf install --assumeyes firewalld dnf-automatic syncthing
 
-  useradd -m syncthing
+  useradd -m "$syncthing_user"
 
   mkdir /etc/systemd/system/syncthing@.service.d/
 
@@ -21,7 +22,7 @@ EOF
   sed --in-place "s@^apply_updates = .*@apply_updates = yes@" /etc/dnf/automatic.conf
 
   systemctl daemon-reload
-  systemctl enable --now dnf-automatic.timer syncthing@"$USER".service firewalld.service
+  systemctl enable --now dnf-automatic.timer syncthing@"$syncthing_user".service firewalld.service &&
 
   tee /etc/sysctl.d/40-max-user-watches.conf > /dev/null <<EOF
 fs.inotify.max_user_watches=524288
