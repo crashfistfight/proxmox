@@ -1,12 +1,12 @@
 #! /usr/bin/env bash
 
-syncthing_vars_() {
+vars_() {
   syncthing_gui_address='0.0.0.0:8384'
-  syncthing_user='syncthing'
+  user='syncthing'
   timezone='Europe/Berlin'
 }
 
-syncthing_() {
+install_() {
   dnf update
   dnf install --assumeyes firewalld dnf-automatic syncthing
 
@@ -36,5 +36,5 @@ EOF
 
 }
 
-syncthing_vars_
-syncthing_
+vars_
+install_
