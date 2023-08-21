@@ -6,4 +6,9 @@ wget -O - https://raw.githubusercontent.com/crashfistfight/proxmox/main/containe
 ```
 ### samba
 ```
-wget -O - https://raw.githubusercontent.com/crashfistfight/proxmox/main/containers/samba | bash 
+wget -O - https://raw.githubusercontent.com/crashfistfight/proxmox/main/containers/samba | bash
+```
+### nas
+```
+wget -O - https://raw.githubusercontent.com/crashfistfight/proxmox/main/containers/nas | bash
+```
