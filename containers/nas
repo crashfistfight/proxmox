@@ -108,7 +108,7 @@ EOF
 #
 
   systemctl daemon-reload
-  systemctl enable --now dnf-automatic.timer smb.service firewalld.service container-spis.service
+  systemctl enable --now dnf-automatic.timer smb.service firewalld.service container-spis.service syncthing@nas.service
 
 
 
